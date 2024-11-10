@@ -1,4 +1,4 @@
-import React from 'react';
+import Link from 'next/link';
 
 const programs = [
   {
@@ -51,21 +51,22 @@ const programs = [
     title: "Database operations with ASP.NET and ADO.NET",
     description: "Perform various database operations including displaying employee data, creating a login module, and CRUD operations on an employee table."
   }
+  // ... (other programs with their respective 'code' property)
 ];
 
 const ProgramList = () => {
   return (
     <ul className="space-y-6">
       {programs.map((program) => (
-        <li key={program.id} className="bg-white shadow overflow-hidden rounded-lg">
-          <div className="px-4 py-5 sm:p-6">
+        <li key={program.id} className="bg-white shadow text-black overflow-hidden rounded-lg hover:shadow-md transition-shadow duration-300">
+          <Link href={`/program/${program.id}`} className="block px-4 py-5 sm:p-6">
             <h3 className="text-lg leading-6 font-medium text-gray-900">
               {program.id}. {program.title}
             </h3>
             <p className="mt-1 text-sm text-gray-600">
               {program.description}
             </p>
-          </div>
+          </Link>
         </li>
       ))}
     </ul>
