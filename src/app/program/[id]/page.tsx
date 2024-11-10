@@ -22,7 +22,7 @@
 
 import { Suspense } from 'react'
 import ProgramContent from './program-content'
-
+import { PageProps } from 'next'
 type PageProps = {
   params: {
     id: string
