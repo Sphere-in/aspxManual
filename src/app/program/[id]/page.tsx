@@ -23,13 +23,14 @@
 import { Suspense } from 'react'
 import ProgramContent from './program-content'
 
-interface PageProps {
+type PageProps = {
   params: {
     id: string
   }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export default function ProgramPage({ params }: PageProps) {
+export default async function ProgramPage({ params, searchParams }: PageProps) {
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
